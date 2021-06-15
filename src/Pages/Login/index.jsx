@@ -7,6 +7,7 @@ function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState();
 
   const fetchLogin = async (e) => {
     e.preventDefault();
@@ -15,12 +16,16 @@ function Login() {
       localStorage.setItem('user', JSON.stringify({ email, status: req.responseStatus }));
       history.push('/');
     }
+    setError(req.responseMessage);
   };
 
   return (
     <form action="">
       <input required type="email" onChange={({ target }) => setEmail(target.value)} />
       <input required type="password" onChange={({ target }) => setPassword(target.value)} />
+      {
+        error ? <p>{error}</p> : null
+      }
       <button
         type="submit"
         onClick={fetchLogin}
