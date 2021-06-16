@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../Context/Provider';
+import { MainTitle } from '../../Styles/Texts';
+import Colors from '../../Styles/Colors';
 
 function Home() {
   const { isFetching, allUsers } = useContext(Context);
@@ -21,7 +23,7 @@ function Home() {
 
   return (
     <>
-      <h1>Home</h1>
+      <MainTitle textColor={Colors.mainTitle}>Home</MainTitle>
       <input type="text" onChange={({ target }) => setSearch(target.value)} />
       {
         isFetching ? <p>loading...</p> : renderUsers()
