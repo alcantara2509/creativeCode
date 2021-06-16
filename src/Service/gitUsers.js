@@ -2,10 +2,10 @@ import axios from 'axios';
 
 const baseURL = 'https://api.github.com';
 
-const gitUsers = async () => {
+const allUsers = async () => {
   const request = await axios.get(`${baseURL}/users`);
 
   return request;
 };
 
-export default gitUsers;
+export default allUsers;

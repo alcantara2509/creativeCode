@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Context } from '../../Context/Provider';
 
 function Home() {
@@ -12,10 +13,10 @@ function Home() {
   }, [isFetching, search]);
 
   const renderUsers = () => filterUsers.map((user) => (
-    <section key={user.id}>
+    <Link to={`/users/${user.login}`} key={user.id}>
       <img src={user.avatar_url} alt="avatar do usuário" />
       <p>{user.login}</p>
-    </section>
+    </Link>
   ));
 
   return (
