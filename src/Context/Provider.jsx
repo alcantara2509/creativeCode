@@ -7,6 +7,7 @@ export const Context = createContext();
 function Provider({ children }) {
   const [isFetching, setIsFetching] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
+  const [isClicked, setIsClicked] = useState('');
 
   useEffect(() => {
     setIsFetching(true);
@@ -25,6 +26,8 @@ function Provider({ children }) {
     setIsFetching,
     allUsers,
     setAllUsers,
+    isClicked,
+    setIsClicked,
   };
 
   return (

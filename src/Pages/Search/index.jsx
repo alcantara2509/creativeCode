@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../Context/Provider';
 import { MainTitle } from '../../Styles/Texts';
 import Colors from '../../Styles/Colors';
+import { SideMenu } from '../../Components';
+import './style.css';
 
-function Home() {
+function Search() {
   const { isFetching, allUsers } = useContext(Context);
   const [search, setSearch] = useState('');
   const [filterUsers, setFilterUsers] = useState(allUsers);
@@ -22,14 +24,15 @@ function Home() {
   ));
 
   return (
-    <>
-      <MainTitle textColor={Colors.mainTitle}>Home</MainTitle>
-      <input type="text" onChange={({ target }) => setSearch(target.value)} />
-      {
-        isFetching ? <p>loading...</p> : renderUsers()
-      }
-    </>
+    <main className="search-container">
+      <SideMenu />
+      <section className="content-wrapper">
+        <MainTitle textColor={Colors.mainTitle}>Home</MainTitle>
+        <input type="text" onChange={({ target }) => setSearch(target.value)} />
+        {isFetching ? <p>loading...</p> : renderUsers()}
+      </section>
+    </main>
   );
 }
 
-export default Home;
+export default Search;

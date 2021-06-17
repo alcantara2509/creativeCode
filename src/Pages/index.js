@@ -1,9 +1,9 @@
-import Home from './Home';
+import Search from './Search';
 import Login from './Login';
 import UserDetails from './UserDetails';
 
 export {
-  Home,
+  Search,
   Login,
   UserDetails,
 };
