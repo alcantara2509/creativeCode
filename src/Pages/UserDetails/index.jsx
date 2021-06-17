@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import userDetails from '../../Service/userDetails';
 import { SideMenu, Header } from '../../Components';
+import Loading from '../../Components/Loading';
+import isLogged from '../../utils/isLogged';
 import './style.css';
 
 function UserDetails() {
@@ -23,6 +25,7 @@ function UserDetails() {
     getUserDetails();
   }, []);
 
+  if (!isLogged()) return <Redirect to="/login" />;
   return (
     <main className="user-details-container">
       <SideMenu />
@@ -32,7 +35,7 @@ function UserDetails() {
         <section className="user-overview-container">
           <Link to="/search" className="details-back">&lt; voltar para busca</Link>
           {
-      isFetching ? <p>loading...</p>
+      isFetching ? <Loading />
         : (
           <section className="user-overview-wrapper">
             <img src={userInfo.avatar_url} alt="user avatar" className="user-details-avatar" />

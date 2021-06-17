@@ -1,8 +1,11 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { Header, SideMenu } from '../../Components';
+import isLogged from '../../utils/isLogged';
 import './style.css';
 
 function Settings() {
+  if (!isLogged()) return <Redirect to="/login" />;
   return (
     <main className="search-container">
       <SideMenu />

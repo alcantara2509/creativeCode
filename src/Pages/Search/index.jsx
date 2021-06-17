@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Context } from '../../Context/Provider';
 // import { MainTitle } from '../../Styles/Texts';
 // import Colors from '../../Styles/Colors';
 import { SideMenu, Header } from '../../Components';
 import { iconBusca } from '../../Styles/Assets';
+import Loading from '../../Components/Loading';
+import isLogged from '../../utils/isLogged';
 import './style.css';
 
 function Search() {
@@ -31,6 +33,7 @@ function Search() {
     </section>
   ));
 
+  if (!isLogged()) return <Redirect to="/login" />;
   return (
     <main className="search-container">
       <SideMenu />
@@ -48,7 +51,7 @@ function Search() {
             </section>
           </section>
           <section className="users-container">
-            {isFetching ? <p>loading...</p> : (
+            {isFetching ? <Loading /> : (
               <section className="users-cards-container">
                 { renderUsers()}
               </section>

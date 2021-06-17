@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Header, SideMenu } from '../../Components';
 import Colors from '../../Styles/Colors';
 import { MainTitle, SubTitle } from '../../Styles/Texts';
 import { illustration } from '../../Styles/Assets';
+import isLogged from '../../utils/isLogged';
 import './style.css';
 
 function Home() {
+  if (!isLogged()) return <Redirect to="/login" />;
   return (
     <main className="search-container">
       <SideMenu />
