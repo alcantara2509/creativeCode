@@ -21,15 +21,15 @@ function SideMenu() {
       <section className={`side-menu-wrapper${isExtended}`}>
         <HamburgerMenu />
         <section className={`side-menu-navlinks${isExtended}`}>
-          <NavLink to="/" activeClassName="selected" className="side-menu-link-icons">
+          <NavLink exact to="/" activeClassName="selected" className="side-menu-link-icons">
             <img src={iconHome} className="side-menu-icons" alt="icon home" />
             <p className={`side-menu-icons-text${isExtended}`}>Home</p>
           </NavLink>
-          <NavLink to="/a" activeClassName="selected" className="side-menu-link-icons">
+          <NavLink to="/search" activeClassName="selected" className="side-menu-link-icons">
             <img src={iconBusca} className="side-menu-icons" alt="icon search" />
             <p className={`side-menu-icons-text${isExtended}`}>Buscar</p>
           </NavLink>
-          <NavLink to="/s" activeClassName="selected" className="side-menu-link-icons">
+          <NavLink to="/config" activeClassName="selected" className="side-menu-link-icons">
             <img src={iconConf} className="side-menu-icons" alt="icon config" />
             <p className={`side-menu-icons-text${isExtended}`}>Configurações</p>
           </NavLink>

@@ -85,7 +85,7 @@
   visibility: hidden;
   opacity: 0;
   color: white;
-  transition: ease 0.5s;
+  transition: ease 0.2s;
   width: 0;
 }
 

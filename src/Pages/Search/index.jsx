@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../Context/Provider';
 import { MainTitle } from '../../Styles/Texts';
 import Colors from '../../Styles/Colors';
-import { SideMenu } from '../../Components';
+import { SideMenu, Header } from '../../Components';
 import './style.css';
 
 function Search() {
@@ -26,10 +26,13 @@ function Search() {
   return (
     <main className="search-container">
       <SideMenu />
-      <section className="content-wrapper">
-        <MainTitle textColor={Colors.mainTitle}>Home</MainTitle>
-        <input type="text" onChange={({ target }) => setSearch(target.value)} />
-        {isFetching ? <p>loading...</p> : renderUsers()}
+      <section className="search-content">
+        <Header headerTitle="Buscar usuários" />
+        <section className="content-wrapper">
+          <MainTitle textColor={Colors.mainTitle}>Home</MainTitle>
+          <input type="text" onChange={({ target }) => setSearch(target.value)} />
+          {isFetching ? <p>loading...</p> : renderUsers()}
+        </section>
       </section>
     </main>
   );

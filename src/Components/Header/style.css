@@ -1,0 +1,17 @@
+.header-container {
+  height: 70px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 55px 0 40px;
+  align-items: flex-end;
+}
+
+.header-logo {
+  width: 170px;
+}
