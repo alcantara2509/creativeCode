@@ -11,6 +11,7 @@ Project developed for the selection process of [CreativeCode](https://creativeco
 
 - Node.js
      - Express
+     - REST
 
 ### Getting started
 
