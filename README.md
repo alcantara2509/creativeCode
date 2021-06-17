@@ -1,6 +1,6 @@
 # CreativeCode
 
-Project developed for the selection process of [CreativeCode](https://creativecode.art.br/).
+Project developed for the selection process of [CreativeCode](https://creativecode.art.br/). The goal was to make requests to the github api, search for users and show user statistics.
 
 ## Stack
 
