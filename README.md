@@ -2,6 +2,8 @@
 
 Project developed for the selection process of [CreativeCode](https://creativecode.art.br/). The goal was to make requests to the github api, search for users and show user statistics.
 
+![home screen](https://raw.githubusercontent.com/alcantara2509/creativeCode/master/Home-screen.png)
+
 ## Stack
 
 - React.JS
