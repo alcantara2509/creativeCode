@@ -15,6 +15,16 @@ function Settings() {
           <section className="settings-wrapper">
             <p className="settings-infos">username: admin@email.com</p>
             <p className="settings-infos">password: 123456</p>
+            <button
+              type="button"
+              onClick={() => {
+                localStorage.removeItem('user');
+                window.location.reload();
+              }}
+              className="sign-out-button"
+            >
+              Sair
+            </button>
           </section>
         </section>
       </section>
