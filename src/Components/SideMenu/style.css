@@ -4,7 +4,7 @@
   height: 100vh;
   position: relative;
   width: 100px;
-  transition: ease 1s;
+  transition: ease 0.5s;
 }
 
 .side-menu-container-extended {
@@ -13,7 +13,7 @@
   height: 100vh;
   position: relative;
   width: 314px;
-  transition: ease 1s;
+  transition: ease 0.5s;
 }
 
 .side-menu-wrapper {
@@ -28,7 +28,7 @@
   padding: 15px;
   position: fixed;
   width: 40px;
-  transition: ease 1s;
+  transition: ease 0.5s;
 }
 
 .side-menu-wrapper-extended {
@@ -43,7 +43,7 @@
   padding: 15px;
   position: fixed;
   width: 170px;
-  transition: ease 1s;
+  transition: ease 0.5s;
 }
 
 .side-menu-navlinks {
@@ -51,16 +51,26 @@
   flex-direction: column;
   justify-content: space-around;
   height: 30vh;
+  width: 70px;
+  transition: ease 0.5s;
 }
 
-.side-menu-navlinks {
-  width: 70px;
+.side-menu-navlinks-extended {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30vh;
+  width: 200px;
+  transition: ease 0.5s;
 }
 
 .side-menu-link-icons {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 33%;
+  justify-content: flex-start;
+  padding-left: 22px;
 }
 
 .selected {
@@ -69,4 +79,22 @@
 
 .side-menu-icons {
   width: 26px;
+}
+
+.side-menu-icons-text {
+  visibility: hidden;
+  opacity: 0;
+  color: white;
+  transition: ease 0.5s;
+  width: 0;
+}
+
+.side-menu-icons-text-extended {
+  width: fit-content;
+  visibility: visible;
+  opacity: 1;
+  color: white;
+  transition: ease 0.5s;
+  margin-left: 10px;
+  margin-top: 5px;
 }
