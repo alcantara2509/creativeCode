@@ -1,0 +1,46 @@
+.user-details-container {
+  display: flex;
+  width: 100%;
+}
+
+.user-overview-container {
+  width: 100%;
+}
+
+.user-overview-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  margin: 40px 55px 40px 40px;
+  padding: 36px;
+  box-shadow: 2px 2px 5px #cccccca8;
+}
+
+.user-details-avatar {
+  width: 200px;
+}
+
+.user-info-content {
+  width: 60%;
+}
+
+.git-button-container {
+  display: flex;
+  align-items: flex-end;
+  height: 200px;
+}
+
+.details-user-name {
+  color: #2c366b;
+}
+
+.details-info-text {
+  color: #666666;
+}
+
+.details-back {
+  color: #666666;
+  margin-left: 42px;
+  font-size: 14px;
+}

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 import userDetails from '../../Service/userDetails';
+import { SideMenu, Header } from '../../Components';
+import './style.css';
 
 function UserDetails() {
   const { pathname } = useLocation();
@@ -19,45 +22,59 @@ function UserDetails() {
 
     getUserDetails();
   }, []);
-  console.log(userInfo);
+
   return (
-    isFetching ? <p>loading...</p>
-      : (
-        <>
-          <img src={userInfo.avatar_url} alt="user avatar" />
-          <h2>{userInfo.name}</h2>
-          <p>
-            login:
-            {' '}
-            {userLogin}
-          </p>
-          <p>
-            blog:
-            {' '}
-            <a href={userInfo.blog} target="blank">
-              {userInfo.blog}
-            </a>
-          </p>
-          <p>
-            {userInfo.followers}
-            {' '}
-            Seguidores
-          </p>
-          <p>
-            {userInfo.following}
-            {' '}
-            Seguindo
-          </p>
-          <a href={`${userInfo.html_url}?tab=repositories`} target="blank">
-            {userInfo.public_repos}
-            {' '}
-            Repositórios
-          </a>
-          <a href={userInfo.html_url} target="blank">
-            Ver Perfil no GitHub
-          </a>
-        </>
-      )
+    <main className="user-details-container">
+      <SideMenu />
+      <section className="search-content">
+
+        <Header headerTitle="" />
+        <section className="user-overview-container">
+          <Link to="/search" className="details-back">&lt; voltar para busca</Link>
+          {
+      isFetching ? <p>loading...</p>
+        : (
+          <section className="user-overview-wrapper">
+            <img src={userInfo.avatar_url} alt="user avatar" className="user-details-avatar" />
+            <section className="user-info-content">
+              <h2 className="details-user-name">{userInfo.name}</h2>
+              <h3 className="details-info-text">{userLogin}</h3>
+              <br />
+              <p className="details-info-text">
+                {userInfo.followers}
+                {' '}
+                Seguidores
+              </p>
+              <p className="details-info-text">
+                {userInfo.following}
+                {' '}
+                Seguindo
+              </p>
+              <a href={`${userInfo.html_url}?tab=repositories`} target="blank" className="details-info-text">
+                {userInfo.public_repos}
+                {' '}
+                Repositórios
+              </a>
+              <p className="details-info-text">{userInfo.location}</p>
+              <br />
+              <br />
+              <p>
+                <a href={userInfo.blog} target="blank" className="details-user-name">
+                  {userInfo.blog}
+                </a>
+              </p>
+            </section>
+            <section className="git-button-container">
+              <a href={userInfo.html_url} target="blank" className="user-card-button">
+                Ver GitHub
+              </a>
+            </section>
+          </section>
+        )
+      }
+        </section>
+      </section>
+    </main>
   );
 }
 

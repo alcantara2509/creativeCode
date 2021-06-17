@@ -1,0 +1,22 @@
+.settings-container {
+  width: 100%;
+}
+
+.settings-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  height: 160px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 300px;
+  padding-left: 30px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px #cccccca8;
+  margin-left: 40px;
+}
+
+.settings-infos {
+  color: #686c92;
+  margin-bottom: 10px;
+}

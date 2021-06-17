@@ -29,7 +29,7 @@ function SideMenu() {
             <img src={iconBusca} className="side-menu-icons" alt="icon search" />
             <p className={`side-menu-icons-text${isExtended}`}>Buscar</p>
           </NavLink>
-          <NavLink to="/config" activeClassName="selected" className="side-menu-link-icons">
+          <NavLink to="/settings" activeClassName="selected" className="side-menu-link-icons">
             <img src={iconConf} className="side-menu-icons" alt="icon config" />
             <p className={`side-menu-icons-text${isExtended}`}>Configurações</p>
           </NavLink>

@@ -14,7 +14,9 @@ function Search() {
 
   useEffect(() => {
     if (search.length === 0) setFilterUsers(allUsers);
-    setFilterUsers(allUsers.filter((e) => e.login.includes(search)));
+    setFilterUsers(allUsers.filter(
+      (e) => e.login.toLowerCase().includes(search.toLocaleLowerCase()),
+    ));
   }, [isFetching, search]);
 
   const renderUsers = () => filterUsers.map((user) => (
