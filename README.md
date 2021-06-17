@@ -1,10 +1,15 @@
-# Getting Started with Create React App
+# CreativeCode
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto desenvolvido para o processo seletivo da [CreativeCode](https://creativecode.art.br/)
 
-## Available Scripts
+## Stacks
 
-In the project directory, you can run:
+- React.JS
+-- Context API
+-- Hooks
+-- Axios
+- NodeJS
+-- Express
 
 ### `npm start`
 
