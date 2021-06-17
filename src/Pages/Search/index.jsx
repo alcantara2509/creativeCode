@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../Context/Provider';
-import { MainTitle } from '../../Styles/Texts';
-import Colors from '../../Styles/Colors';
+// import { MainTitle } from '../../Styles/Texts';
+// import Colors from '../../Styles/Colors';
 import { SideMenu, Header } from '../../Components';
+import { iconBusca } from '../../Styles/Assets';
 import './style.css';
 
 function Search() {
@@ -17,10 +18,15 @@ function Search() {
   }, [isFetching, search]);
 
   const renderUsers = () => filterUsers.map((user) => (
-    <Link to={`/users/${user.login}`} key={user.id}>
-      <img src={user.avatar_url} alt="avatar do usuário" />
-      <p>{user.login}</p>
-    </Link>
+    <section className="user-card">
+      <img src={user.avatar_url} alt="avatar do usuário" className="user-avatar" />
+      <section className="user-card-info">
+        <h3 className="user-card-login">{user.login}</h3>
+        <Link to={`/users/${user.login}`} key={user.id} className="user-card-button">
+          ver perfil
+        </Link>
+      </section>
+    </section>
   ));
 
   return (
@@ -29,9 +35,23 @@ function Search() {
       <section className="search-content">
         <Header headerTitle="Buscar usuários" />
         <section className="content-wrapper">
-          <MainTitle textColor={Colors.mainTitle}>Home</MainTitle>
-          <input type="text" onChange={({ target }) => setSearch(target.value)} />
-          {isFetching ? <p>loading...</p> : renderUsers()}
+          <section className="input-search-container">
+            <section className="input-search-wrapper">
+              <input
+                type="text"
+                onChange={({ target }) => setSearch(target.value)}
+                className="input-search"
+              />
+              <img src={iconBusca} alt="icone de busca" className="input-search-icon" />
+            </section>
+          </section>
+          <section className="users-container">
+            {isFetching ? <p>loading...</p> : (
+              <section className="users-cards-container">
+                { renderUsers()}
+              </section>
+            )}
+          </section>
         </section>
       </section>
     </main>
